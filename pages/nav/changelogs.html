@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../../script/nav/bot.js"></script>
         <link rel="stylesheet" href="../../style/nav/changelogs.css">
-        <title> Exia - Bot </title>
+        <title> Exia - Changelogs </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../assets/images/logoexia.png">
@@ -19,23 +18,44 @@
                         <p id="username"></p>
                     </button>
                     <div class="nav">
-                        <a href="./nav/bot.html">Liste de vos bots</a>
-                        <a href="./nav/changelogs.html">Changelogs</a>
-                        <a href="./nav/settings.html">Paramètres</a>
+                        <a href="./bot.html">Liste de vos bots</a>
+                        <a href="./changelogs.html">Changelogs</a>
+                        <a href="./settings.html">Paramètres</a>
                     </div>
                 </div>
             </div>
         </header>
         <main>
-            <nav class="changelogs-nav">
-                <ul>
-                    <li>Application</li>
-                    <li>API</li>
-                    <li>Documentation</li>
-                    <li>Dashboard</li>
-                </ul>
-            </nav>
-            <h2>Voici les notes de mise à jours les plus récentes</h2>
+            <div class="changelogs-nav">
+                <nav>
+                    <ul>
+                        <li>
+                            <button type="button" id="app">Application</button>
+                        </li>
+                        <li>
+                            <button type="button" id="api">API</button>
+                        </li>
+                        <li>
+                            <button type="button" id="doc">Documentation</button>
+                        </li>
+                        <li>
+                            <button type="button" id="dash">Dashboard</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="notes">
+                <h2>Voici les notes de mise à jours les plus récentes</h2>
+                <div id="changelogs">
+                    <div class="changelog-card">
+                        <h3>Applications - v00.00.00</h3>
+                        <p class="changelog-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta mattis consectetur. 
+                            Donec in lectus sed orci accumsan pharetra vel sit amet orci...
+                        </p>
+                    </div>                    
+                </div>
+            </div>
         </main>
         <footer>
             <div class="grid-footer">
@@ -66,11 +86,12 @@
             <div class="grid-footer">
                 <h3>Légal</h3>
                 <ul>
-                    <li><a href="https://exia.site/terms-of-service" target="_blank">Conditions d'utilisations</a></li>
-                    <li><a href="https://exia.site/privacy-policy" target="_blank">Politique de confidentialité</a></li>
-                    <li><a href="https://exia.site/cookie-policy" target="_blank">Politique de cookies</a></li>
+                    <li><a href="https://cgu.exia.site" target="_blank">Conditions d'utilisations</a></li>
+                    <li><a href="https://cgv.exia.site" target="_blank">Condition Générale de Venteé</a></li>
+                    <li><a href="https://pdc.exia.site" target="_blank">Politique de confidentialité</a></li>
                 </ul>
             </div>
         </footer>
+        <script src="../../script/nav/changelogs.js" type="module"></script>
     </body>
 </html>

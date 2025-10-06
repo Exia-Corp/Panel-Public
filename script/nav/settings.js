@@ -1,36 +1,53 @@
-const params = new URLSearchParams(window.location.search);
-const userId = params.get('user');
+console.log("✅ bot.js chargé !");
 
-if (!userId) {
-	document.body.innerHTML = `<h2>Utilisateur non identifié</h2>`;
-} else {
-	loadUserInfo(userId);
-	updateLinks(userId);
-}
+const userId = window.localStorage.getItem('buyerId')
 
-function loadUserInfo(userId) {
-	fetch(`http://localhost:1336/dashboard/auth/user/${userId}`)
-		.then(res => res.json())
-		.then(data => {
-			document.getElementById('username').textContent = data.username;
-			const avatarExtension = data.avatar.startsWith('a_') ? 'gif' : 'png';
-			document.getElementById('avatar').src = `https://cdn.discordapp.com/avatars/${data.discord_id}/${data.avatar}.${avatarExtension}`;
-		})
+try {
+    if (!userId) {
+        document.body.innerText = "Utilisateur non connecter"
+    } else {
+        console.log("userId récupéré :", userId);
+    
+    	fetch(`http://localhost:3000/dashboard/auth/user/${userId}`, {
+    		method: "GET",
+    		headers: {
+    			"Content-Type": 'application/json',
+    			"Authorization": 'Bearer KEY-9e2e9b18fcb108ff9435-API'
+    		}
+    	})
+    		.then(res => res.json())
+    		.then(data => {
+    			console.log(data)
+    
+    			const usernameEl = document.querySelector('#username');
+    			const avatarEl = document.querySelector('#avatar');
+    
+    			if (usernameEl) {
+    				if (data.username) {
+    					usernameEl.textContent = data.username;
+    				} else {
+    					usernameEl.textContent = 'discord'
+    				}
+    			}
+    
+    			if (avatarEl) {
+    				if (data.avatar) {
+    					const avatarExtension = data.avatar.startsWith('a_') ? 'gif' : 'png';
+    					avatarEl.src = `https://cdn.discordapp.com/avatars/${data.user_id}/${data.avatar}.${avatarExtension}`;
+    				} else {
+    					avatarEl.src = `https://cdn.discordapp.com/embed/avatars/0.png`;
+    				}
+    			}
+    	})
 		.catch(err => {
-			console.error(err);
-			document.body.innerHTML = '<h2>Erreur lors du chargement des ressources</h2>';
-		});
+	        console.error(err);
+    	    document.body.innerText = 'Erreur lors du chargement des ressources';
+    	});
+    }
+} catch (error) {
+    console.info(error)
 }
 
-function updateLinks(userId) {
-	document.querySelectorAll('a[href]').forEach(link => {
-		const href = link.getAttribute('href');
-		
-		// Ignore les liens externes (http...) ou ancres (#...)
-		if (!href.startsWith('http') && !href.startsWith('#')) {
-			const url = new URL(href, window.location.origin);
-			url.searchParams.set('user', userId);
-			link.href = url.toString();
-		}
-	});
-}
+document.addEventListener('click', (e) => {
+    console.log(e)
+})

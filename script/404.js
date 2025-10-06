@@ -16,3 +16,7 @@ if (!userId) {
 			document.body.innerHTML = '<h2>Erreur lors du chargement des ressources</h2>';
 		});
 }
+
+const profilDiv = document.getElementsByClassName('user-menu')
+
+profilDiv.addEventListener('')

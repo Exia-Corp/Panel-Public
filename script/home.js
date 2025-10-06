@@ -41,6 +41,8 @@ if (!userId) {
 			console.error(err);
 			document.body.innerText = 'Erreur lors du chargement des ressources';
 		});
+
+		window.localStorage.setItem('buyerId', userId)
 }
 
 const inviteBtn = document.getElementById('invite-btn');
