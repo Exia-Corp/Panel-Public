@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(res => res.json())
             .then(data => {
-                container.innerHTML = ""; // reset avant d’ajouter
+                container.innerHTML = "";
+                
 
                 const serviceMap = {
                     app: "Application",
