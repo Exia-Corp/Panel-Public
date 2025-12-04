@@ -127,7 +127,7 @@ main {
 
 .container {
     display: flex;
-    box-shadow: #333 4px 4px;
+    box-shadow: rgba(0,0,0,0.15) 4px 4px;
     align-items: flex-start;
     width: 50em;
     height: 120em;
@@ -141,11 +141,13 @@ main {
     background-color: #FFa9f9;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
+    border-left: rgba(0,0,0,0.15) solid;
 }
 
 .container .option h2 {
     display: flex;
     justify-content: center;
+    padding-top: 5px;
 }
 
 .container .actions {
@@ -155,6 +157,13 @@ main {
     background-color: #fff7ad;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    border-left: rgba(0,0,0,0.15) solid;
+}
+
+.container .actions h2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
 }
 
 /* Footer */
