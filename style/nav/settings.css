@@ -127,24 +127,34 @@ main {
 
 .container {
     display: flex;
+    box-shadow: #333 4px 4px;
     align-items: flex-start;
     width: 50em;
-    height: 125em;
-    border-radius: 50em;
+    height: 120em;
+    border-radius: 25px;
 }
 
 .container .option {
-    justify-items: start;
+    justify-self: self-start;
     width: 20em;
     height: 120em;
     background-color: #FFa9f9;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.container .option h2 {
+    display: flex;
+    justify-content: center;
 }
 
 .container .actions {
-    align-content: end;
+    justify-content: end;
     width: 30em;
     height: 120em;
     background-color: #fff7ad;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 /* Footer */
