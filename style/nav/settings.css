@@ -115,6 +115,8 @@ header .logo .user-menu .nav a:hover {
     background-color: #eee;
 }
 
+/* Main */
+
 main {
     display: flex;
     flex-direction: column;
@@ -123,48 +125,26 @@ main {
     padding: 40px 20px;
 }
 
-main .text h1 {
-    font-size: 64px;
-    font-weight: bolder;
-    margin-bottom: 20px;
-    width: 90%;
-    max-width: 600px;
-    justify-self: center;
-}
-
-main .text p {
-    font-size: 32px;
-    margin: 15px auto;
-    width: 90%;
-    max-width: 1000px;
-}
-
-main .components {
+.container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
-    width: 100%;
+    align-items: flex-start;
+    width: 50em;
+    height: 125em;
+    border-radius: 50em;
 }
 
-main .components button {
-    width: 250px;
-    padding: 15px 25px;
-    border-radius: 100px;
-    font-size: 25px;
-    font-weight: bold;
-    background: linear-gradient(90deg, #fff7ad, #FFa9f9);
-    border: none;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    box-sizing: border-box;
+.container .option {
+    justify-items: start;
+    width: 20em;
+    height: 120em;
+    background-color: #FFa9f9;
 }
 
-main .components button:hover {
-    background: linear-gradient(90deg, #FFa9f9, #fff7ad);
-    transform: scale(1.05);
+.container .actions {
+    align-content: end;
+    width: 30em;
+    height: 120em;
+    background-color: #fff7ad;
 }
 
 /* Footer */
