@@ -1,4 +1,3 @@
-// Récupération de l'userId depuis le localStorage
 const userId = window.localStorage.getItem('buyerId');
 
 if (!userId) {
@@ -6,7 +5,6 @@ if (!userId) {
 } else {
 	console.log("userId récupéré :", userId);
 
-	// Requête pour récupérer les infos de l'utilisateur
 	fetch(`http://localhost:3000/dashboard/auth/user/${userId}`, {
 		method: "GET",
 		headers: {
